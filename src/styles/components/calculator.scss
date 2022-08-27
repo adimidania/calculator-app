@@ -24,12 +24,17 @@
   border-radius: 7.5px;
   color: var(--screen-text);
   padding: 10px 17.5px;
+  overflow-x: hidden;
 }
 
 .previous-op,
 .current-op {
   width: 100%;
   font-weight: 700;
+}
+
+.current-op {
+  overflow-x: hidden;
 }
 
 .previous-op {

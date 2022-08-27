@@ -91,22 +91,23 @@ function reducer(state, { type, payload }) {
 function evaluate({ current, previous, operation }) {
   const prev = parseFloat(previous);
   const curr = parseFloat(current);
+  const fixNumber = (num) => Number.parseFloat(num.toPrecision(4));
   if (isNaN(prev) || isNaN(curr)) {
     return "";
   }
   let result = "";
   switch (operation) {
     case "+":
-      result = prev + curr;
+      result = fixNumber(prev + curr);
       break;
     case "-":
-      result = prev - curr;
+      result = fixNumber(prev - curr);
       break;
     case "x":
-      result = prev * curr;
+      result = fixNumber(prev * curr);
       break;
     case "÷":
-      result = prev / curr;
+      result = fixNumber(prev / curr);
       break;
     default:
       break;
@@ -123,7 +124,9 @@ function Calculator() {
           {previous}
           {operation}
         </div>
-        <div className="current-op">{current}</div>
+        <div className="current-op">
+          <p>{current}</p>
+        </div>
       </div>
       <div className="grid-buttons">
         {/* First row */}
