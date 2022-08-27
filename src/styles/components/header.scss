@@ -1,0 +1,22 @@
+@import "toggle.scss";
+@import "../globals/layout.scss";
+
+/* Header */
+
+header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header {
+  width: var(--small-screen);
+  margin: 10px 0;
+}
+
+header h1,
+header h6,
+header label {
+  color: var(--header-input-text);
+}

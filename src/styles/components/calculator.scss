@@ -1,0 +1,57 @@
+@import "../globals/layout.scss";
+
+@mixin flex($direction, $align, $justify) {
+  display: flex;
+  flex-direction: $direction;
+  align-items: $align;
+  justify-content: $justify;
+}
+
+.calculator-wrapper {
+  @include flex(column, center, center);
+  width: var(--small-screen);
+  gap: 25px;
+}
+
+.screen,
+.grid-buttons {
+  width: 100%;
+}
+
+.screen {
+  height: 90px;
+  background-color: var(--screen-background);
+  border-radius: 7.5px;
+  color: var(--screen-text);
+  padding: 10px 17.5px;
+}
+
+.previous-op,
+.current-op {
+  width: 100%;
+  font-weight: 700;
+}
+
+.previous-op {
+  height: 30%;
+  @include flex(row, center, flex-end);
+  font-size: 18px;
+}
+
+.current-op {
+  height: 70%;
+  @include flex(row, center, flex-end);
+  font-size: 30px;
+}
+
+.grid-buttons {
+  padding: 20px 0;
+  border-radius: 7.5px;
+  background-color: var(--toggle-background);
+  display: grid;
+  grid-template-columns: repeat(4, 50px);
+  justify-content: center;
+  align-content: center;
+  gap: 20px;
+  grid-template-rows: repeat(5, 50px);
+}

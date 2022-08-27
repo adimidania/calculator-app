@@ -1,0 +1,94 @@
+:root {
+  // Theme 01
+  --main-background-1: hsl(222, 26%, 31%);
+  --toggle-background-1: hsl(223, 31%, 20%);
+  --screen-background-1: hsl(224, 36%, 15%);
+  --key-del-reset-1: hsl(225, 21%, 49%);
+  --key-del-reset-shadow-1: hsl(224, 28%, 35%);
+  --key-equal-background-1: hsl(6, 63%, 50%);
+  --key-equal-shadow-1: hsl(6, 70%, 34%);
+  --key-1: hsl(30, 25%, 89%);
+  --key-shadow-1: hsl(28, 16%, 65%);
+  --dark-text-1: hsl(221, 14%, 31%);
+  --white-text: hsl(30, 25%, 89%);
+
+  // Theme 02
+  --main-background-2: hsl(0, 0%, 90%);
+  --toggle-background-2: hsl(0, 5%, 81%);
+  --screen-background-2: hsl(0, 0%, 93%);
+  --key-del-reset-2: hsl(185, 42%, 37%);
+  --key-del-reset-shadow-2: hsl(185, 58%, 25%);
+  --key-equal-background-2: hsl(25, 98%, 40%);
+  --key-equal-shadow-2: hsl(25, 99%, 27%);
+  --key-2: hsl(45, 7%, 89%);
+  --key-shadow-2: hsl(35, 11%, 61%);
+  --dark-text-2: hsl(60, 10%, 19%);
+
+  // Theme 03
+  --main-background-3: hsl(268, 75%, 9%);
+  --toggle-background-3: hsl(268, 71%, 12%);
+  --screen-background-3: hsl(268, 71%, 12%);
+  --key-del-reset-3: hsl(281, 89%, 26%);
+  --key-del-reset-shadow-3: hsl(285, 91%, 52%);
+  --key-equal-background-3: hsl(176, 100%, 44%);
+  --key-equal-shadow-3: hsl(177, 92%, 70%);
+  --key-3: hsl(268, 47%, 21%);
+  --key-shadow-3: hsl(290, 70%, 36%);
+  --dark-text-3: hsl(198, 20%, 13%);
+  --light-yellow-text-3: hsl(52, 100%, 62%);
+}
+
+/* Setting Up themes */
+body.theme-1 {
+  --header-input-text: var(--white-text);
+  --toggle-background: var(--toggle-background-1);
+  --option: var(--key-equal-background-1);
+  --background: var(--main-background-1);
+  --screen-background: var(--screen-background-1);
+  --key: var(--key-1);
+  --key-shadow: var(--key-shadow-1);
+  --key-text: var(--dark-text-1);
+  --reset-background: var(--key-del-reset-1);
+  --reset-shadow: var(--key-del-reset-shadow-1);
+  --reset-text: var(--white-text);
+  --key-equal-background: var(--key-equal-background-1);
+  --key-equal-shadow: var(--key-equal-shadow-1);
+  --key-equal-text: var(--white-text);
+  --screen-text: var(--white-text);
+}
+
+body.theme-2 {
+  --header-input-text: var(--dark-text-2);
+  --toggle-background: var(--toggle-background-2);
+  --option: var(--key-equal-background-2);
+  --background: var(--main-background-2);
+  --screen-background: var(--screen-background-2);
+  --key: var(--key-2);
+  --key-shadow: var(--key-shadow-2);
+  --key-text: var(--dark-text-2);
+  --reset-background: var(--key-del-reset-2);
+  --reset-shadow: var(--key-del-reset-shadow-2);
+  --reset-text: var(--white-text);
+  --key-equal-background: var(--key-equal-background-2);
+  --key-equal-shadow: var(--key-equal-shadow-2);
+  --key-equal-text: var(--white-text);
+  --screen-text: var(--dark-text-2);
+}
+
+body.theme-3 {
+  --header-input-text: var(--light-yellow-text-3);
+  --toggle-background: var(--toggle-background-3);
+  --option: var(--key-equal-background-3);
+  --background: var(--main-background-3);
+  --screen-background: var(--screen-background-3);
+  --key: var(--key-3);
+  --key-shadow: var(--key-shadow-3);
+  --key-text: var(--light-yellow-text-3);
+  --reset-background: var(--key-del-reset-3);
+  --reset-shadow: var(--key-del-reset-shadow-3);
+  --reset-text: var(--white-text);
+  --key-equal-background: var(--key-equal-background-3);
+  --key-equal-shadow: var(--key-equal-shadow-3);
+  --key-equal-text: var(--dark-text-1);
+  --screen-text: var(--light-yellow-text-3);
+}

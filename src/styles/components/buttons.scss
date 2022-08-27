@@ -1,0 +1,63 @@
+@mixin button-styling($background, $text, $shadow, $font-size, $font-weight) {
+  border: none;
+  cursor: pointer;
+  border-radius: 6px;
+  font-family: var(--League-spartan);
+  background-color: $background;
+  border-bottom-width: 3px;
+  border-bottom-style: solid;
+  border-color: $shadow;
+  color: $text;
+  transition: 0.3s;
+  font-size: $font-size;
+  font-weight: $font-weight;
+}
+
+.digit-button,
+.operation-button {
+  width: 52.5px;
+  height: 52.5px;
+  @include button-styling(
+    var(--key),
+    var(--key-text),
+    var(--key-shadow),
+    22px,
+    900
+  );
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+.del-button,
+.rest-button {
+  @include button-styling(
+    var(--reset-background),
+    var(--reset-text),
+    var(--reset-shadow),
+    18.5px,
+    900
+  );
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+.equal-button,
+.rest-button {
+  height: 52.5px;
+  grid-column: span 2;
+}
+
+.equal-button {
+  @include button-styling(
+    var(--key-equal-background),
+    var(--key-equal-text),
+    var(--key-equal-shadow),
+    18.5px,
+    900
+  );
+  &:hover {
+    opacity: 0.8;
+  }
+}

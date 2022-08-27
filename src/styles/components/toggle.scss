@@ -1,0 +1,52 @@
+@mixin flex($direction, $align, $justify) {
+  display: flex;
+  flex-direction: $direction;
+  align-items: $align;
+  justify-content: $justify;
+}
+
+.theme-switcher-wrapper {
+  gap: 20px;
+  @include flex(row, flex-end, center);
+}
+
+.theme-switcher-wrapper h6 {
+  margin-bottom: 6.5px;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.theme-switcher {
+  gap: 3.5px;
+  @include flex(column, center, center);
+}
+
+.labels,
+.options {
+  width: 100%;
+  @include flex(row, center, space-around);
+  gap: 8.5px;
+}
+
+.options {
+  background-color: var(--toggle-background);
+  padding: 4px;
+  border-radius: 25px;
+}
+
+label {
+  text-align: center;
+  font-size: 13.5px;
+}
+
+input {
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+input:checked {
+  background-color: var(--option);
+}

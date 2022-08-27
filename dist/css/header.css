@@ -1,0 +1,77 @@
+.theme-switcher-wrapper {
+  gap: 18px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.theme-switcher-wrapper h6 {
+  margin-bottom: 4.5px;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.theme-switcher {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5px;
+  align-items: center;
+  justify-content: center;
+}
+
+.labels,
+.options {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  gap: 8.5px;
+}
+
+.options {
+  background-color: var(--toggle-background);
+  padding: 4px;
+  border-radius: 25px;
+}
+
+label {
+  text-align: center;
+  font-size: 13.5px;
+}
+
+input {
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+input:checked {
+  background-color: var(--option);
+}
+
+:root {
+  --small-screen: 325px;
+  --medium-screen: 500px;
+  --large-screen: 700px;
+}
+
+/* Header */
+header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header {
+  width: var(--small-screen);
+  margin: 15px 0;
+}
+
+header h1,
+header h6,
+header label {
+  color: var(--header-input-text);
+}/*# sourceMappingURL=header.css.map */
