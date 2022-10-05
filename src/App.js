@@ -25,7 +25,9 @@ function App() {
   }, [theme]);
 
   return (
-    <main>
+    <main
+
+    >
       <Header theme={theme} setTheme={setTheme} />
       <Calculator />
     </main>
