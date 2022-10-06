@@ -1,4 +1,4 @@
-import { useReducer } from "react";
+import { useEffect, useReducer } from "react";
 import DigitButton from "./DigitButton";
 import OperationButton from "./OperationButton";
 import "../styles/components/calculator.scss";
@@ -117,8 +117,63 @@ function evaluate({ current, previous, operation }) {
 }
 function Calculator() {
   const [{ current, previous, operation }, dispatch] = useReducer(reducer, {});
+  useEffect(() => {
+    document.addEventListener("keydown", detecteKeyDown, true)
+    return () => {
+      document.removeEventListener("keydown")
+    }
+  }, [])
+
+  const detecteKeyDown = (e) => {
+    e.preventDefault()
+    // console.log(e.key)
+    const digitsRE = /[0-9]/
+    if (digitsRE.test(e.key)) {
+      dispatch({ type: OPERATIONS.ADD_DIGIT, payload: { digit: e.key } })
+    }
+    switch (e.key) {
+      case 'Backspace':
+        dispatch({ type: OPERATIONS.REMOVE_DIGIT })
+        break
+      case 'Enter':
+        dispatch({ type: OPERATIONS.EQUAL })
+        break;
+      case ' ':
+        dispatch({ type: OPERATIONS.RESET })
+        break;
+      case '+':
+        dispatch({
+          type: OPERATIONS.SELECT_OPERATION,
+          payload: { operation: '+' },
+        })
+        break;
+      case '-':
+        dispatch({
+          type: OPERATIONS.SELECT_OPERATION,
+          payload: { operation: '-' },
+        })
+        break;
+      case '/':
+        dispatch({
+          type: OPERATIONS.SELECT_OPERATION,
+          payload: { operation: '/' },
+        })
+        break;
+      case '*':
+        dispatch({
+          type: OPERATIONS.SELECT_OPERATION,
+          payload: { operation: 'x' },
+        })
+        break;
+      default:
+        break;
+
+    }
+  }
   return (
-    <div className="calculator-wrapper">
+    <div className="calculator-wrapper"
+
+    >
       <div className="screen">
         <div className="previous-op">
           {previous}
@@ -128,7 +183,9 @@ function Calculator() {
           <p>{current}</p>
         </div>
       </div>
-      <div className="grid-buttons">
+      <div
+        className="grid-buttons"
+      >
         {/* First row */}
         <DigitButton digit="7" dispatch={dispatch} />
         <DigitButton digit="8" dispatch={dispatch} />
